@@ -65,8 +65,7 @@ class Employee{
     }
     @Override
     public String toString() {
-        return name + " : " + department + " : " + salary;
-    }
+        return (this.name + " : " + this.department + " : " + this.salary);}
 
 
 }
@@ -74,10 +73,10 @@ class Employee{
 class q8{
     //define method query
     public static Stream<Employee> query(ArrayList<Employee> eList, String d, double s){
-        Stream<Employee> st= eList.stream()
+        return eList.stream()
                                 .filter(e-> (e.getDept().equals(d) 
                                 && e.getsalary()>=s ));
-        return st;
+        
 
     }
 
@@ -92,7 +91,7 @@ class q8{
         eList.add(new Employee("Jacob", "IT", 70000));
         eList.add(new Employee("James", "HR", 80000));
         String d = sc.next();       //read department
-        double s = sc.nextInt();    //read salary
+        double s = sc.nextDouble();    //read salary
 		
         var st = query(eList, d, s);
         st.forEach(n -> System.out.println(n + " "));

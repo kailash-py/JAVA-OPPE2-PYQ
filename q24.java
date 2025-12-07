@@ -68,8 +68,8 @@ public class q24 {
         // After filtering collect the stream to appropriate collection fList.
         // Use Collections.sort() to sort fList.
         fList = eList.stream()
-.filter(e -> e.getRating() > 6 && e.getSalary() < 20000)
-.collect(Collectors.toList());
+                            .filter(e -> e.getRating() > 6 && e.getSalary() < 20000)
+                            .collect(Collectors.toList());
 
     Collections.sort(fList, (e1, e2) -> (e2.getRating() - e1.getRating()));
     return fList;

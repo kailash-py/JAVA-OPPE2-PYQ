@@ -47,10 +47,11 @@ class Employee implements Cloneable{
     public void setProject(int idx, String p){
         this.projects[idx]= p;
     }
-    public Employee clone() throws CloneNotSupportedException{
-        Employee emp_clone= (Employee)super.clone();
-        emp_clone.projects= projects.clone();
-        return emp_clone;
+    // Ovveride Clone method here
+    public Employee clone() throws  CloneNotSupportedException{
+        Employee clone_= (Employee)super.clone();
+        clone_.projects=projects.clone();
+        return clone_;
     }
 }
 public class q5 {

@@ -33,13 +33,12 @@ What you have to do
 • Define method updateProjectList in class ProjectManager
 Template Code */
 import java.util.*;
-// define class NoTeamMemberException
-class NoTeamMemberException extends Exception{
 
+// define class NoTeamMemberException
+class NoTeamMemberException extends Exception {
     public NoTeamMemberException() {
         super();
     }
-    
 }
 
 class Project {
@@ -70,15 +69,16 @@ class Project {
 
 public class q9 {
     // define method updateProjectList
-    public static void updateProjectList(List<Project> pList){
-        for(Project p : pList){
+    public static void updateProjectList(List<Project> pList) {
+        for (Project p : pList) {
             try {
                 p.hasTeamMembers();
             } catch (NoTeamMemberException e) {
                 p.addTeamMember("Default Member");
             }
-            }
+        }
     }
+
     public static void displayProjectList(List<Project> projectList) {
         System.out.println("Updated Project List:");
         for (Project project : projectList) {

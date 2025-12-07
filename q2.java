@@ -7,7 +7,9 @@
  The program should have the following classes:
  b " Class SpeedLimitException extends Exception and has/should have the following
  members:b  Constructor accepting an error message.
- b " Class Car has/should have the following members:b  Instance variables String model and double speedb  Constructor to initialize the instance variables.b  Methodvoid accelerate(double increment) throws SpeedLimitException.
+ b " Class Car has/should have the following members:b  
+Instance variables String model and double speedb  
+Constructor to initialize the instance variables.b  Methodvoid accelerate(double increment) throws SpeedLimitException.
  b If the new speed (current speed + increment) exceeds the maximum speed
  limit of 120 km/h, the method throws a SpeedLimitException with the
  message "Speed limit exceeded, Max allowed is 120 km/h."
@@ -18,35 +20,41 @@
  What you have to do
  b " Implement class SpeedLimitException.
  b " Implement the accelerate() method in class Car.
- Page 8
-Template Code*/
+*/
 
 import java.util.*;
+
 //Define class SpeedLimitException
-class SpeedLimitException extends Exception{
-    public SpeedLimitException(String message){
-        super(message);
-    }
+class SpeedLimitException extends Exception {
+	public SpeedLimitException(String msg) {
+		super(msg);
+	}
 }
+
 class Car {
 	private String model;
 	private double speed;
+
 	public Car(String model) {
 		this.model = model;
 		this.speed = 0.0;
 	}
+
 	public void accelerate(double increment) throws SpeedLimitException {
-// Implement the method
-        if ((speed + increment )>120){
-            throw new SpeedLimitException("Speed limit exceeded, Max allowed is 120 km/h.");
-        }
-        speed+= increment;
-        
+		// Implement the method
+
+		if ((speed + increment) >= 120) {
+			throw new SpeedLimitException(("Speed limit exceeded, Max allowed is 120 km/h."));
+		} else {
+			speed += increment;
+		}
 	}
+
 	public String toString() {
 		return "Car Model: " + model + ", Speed: " + speed + " km/h";
 	}
 }
+
 public class q2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -62,15 +70,14 @@ public class q2 {
 	}
 }
 
-
 /*
-Public Test Case 1
-Input:
-Page 9
-Toyota
-50
-80
-Output:
-Speed limit exceeded, Max allowed is 120 km/h.
-Car Model: Toyota, Speed: 50.0 km/h
-*/
+ * Public Test Case 1
+ * Input:
+ * Page 9
+ * Toyota
+ * 50
+ * 80
+ * Output:
+ * Speed limit exceeded, Max allowed is 120 km/h.
+ * Car Model: Toyota, Speed: 50.0 km/h
+ */

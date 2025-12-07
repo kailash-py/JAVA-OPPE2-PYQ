@@ -50,11 +50,10 @@ class Patient {
 
     //Write processor method here to filter patients - Method patientProcessor(ArrayList<Patient>) returns filtered stream:
     // age < 30 and chronicCondition = "Diabetes"
-    public static Stream<Patient> patientProcessor(ArrayList<Patient> patients){
-        return patients.stream()
-                            .filter(p -> p.getage()<30 && p.getchronicCondition().equals("Diabetes"));
-        
-    } 
+    public static Stream<Patient> patientProcessor(ArrayList<Patient> pList) {
+        return pList.stream().filter(p-> p.getage()<30 && p.getchronicCondition()=="Diabetes");
+
+    }
 }
 
 public class q6 {

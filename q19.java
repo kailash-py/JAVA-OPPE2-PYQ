@@ -16,23 +16,17 @@ import java.util.*;
 class q19 {
 
     // implement function replace()
-    public static char[] replace(char[] arr, int i, char c){
-       try {
-         if (i <0){
-            throw new ArrayIndexOutOfBoundsException("Index cannot be negative");
-
-        } arr[i]=c;
-     }
-        catch(ArrayIndexOutOfBoundsException e){
-            if(i>= arr.length){
+    public static char[] replace(char[] arr, int i, char c)throws ArrayIndexOutOfBoundsException{
+        try {
+            arr[i]=c;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            if(i>arr.length-1){
                 arr[arr.length-1]=c;
-            }else{
-                throw e;
+            } else if( i<0){
+                throw new ArrayIndexOutOfBoundsException("Negative index not allowed") ;
             }
+        } return arr;
 
-
-        }
-        return arr;
     }
     
     // public static char[] replace(char[] arr, int index, char c) throws ArrayIndexOutOfBoundsException {

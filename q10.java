@@ -48,8 +48,8 @@ class Product {
         return stockQuantity;
     }
     // define method productProcessor
-    public static Stream<Product> productProcessor(ArrayList<Product> prd){
-        return prd.stream().filter(p -> p.getPrice()> 5000 && p.getStockQuantity()>10);
+    public static Stream<Product> productProcessor(ArrayList<Product> pList){
+        return pList.stream().filter(p-> p.price>5000 && p.stockQuantity>10);
     }
 }
 

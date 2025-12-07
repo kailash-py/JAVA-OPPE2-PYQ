@@ -21,6 +21,7 @@ Class AthleteCloneTest contains the main method that takes the inputs and invoke
 */
 
 import java.util.*;
+import jdk.jfr.Event;
 // import java.util.Scanner;
 
 class Athlete implements Cloneable {
@@ -52,7 +53,7 @@ class Athlete implements Cloneable {
 
     // Deep cloning method
     public Athlete clone() throws CloneNotSupportedException{
-        Athlete clone_ = (Athlete) super.clone();
+        Athlete clone_ = (Athlete)super.clone();
         clone_.events= (ArrayList<String>) events.clone();
         return clone_;
     }

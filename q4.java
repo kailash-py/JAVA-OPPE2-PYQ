@@ -57,18 +57,17 @@ class InvalidAgeException extends Exception{
 public class q4 {
 
     // DEFINE method isEligibletoVote
-    public static boolean isEligibletoVote(int age) throws InvalidAgeException{
-        if (age>=18){
-            return true;
+    public static boolean isEligibletoVote(int age)throws InvalidAgeException{
+        if (age<18){
+            throw new InvalidAgeException("Invalid age to vote");
         }
-        throw new InvalidAgeException("Invalid age to vote");
+        else return true;
     }
     // DEFINE method isEligibletoWriteUPSC
-    public static boolean isEligibletoWriteUPSC(int age) throws InvalidAgeException{
-        if (age<=32){
-            return true;
-        }
-        throw new InvalidAgeException("Invalid age to write UPSC");
+    public static boolean isEligibletoWriteUPSC(int age)throws InvalidAgeException{
+        if (age>32) {
+            throw new InvalidAgeException("Invalid age to write UPSC");
+        }else return true;
     }
 
     public static void main(String[] args) {

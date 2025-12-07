@@ -86,7 +86,7 @@ class Student implements Comparable<Student> {
         // if (this.marks>other.marks) return 1;
         // else if (this.marks<other.marks) return -1;
         // else return 0;
-        return this.marks-other.marks;
+        return this.marks-other.marks; //ascending
     }
 }
 
@@ -94,8 +94,8 @@ public class q22 {
     
     // Define findStudent method
     public static Optional<Student> findStudent(ArrayList<Student> sList) {
-        return sList.stream().filter(s -> s.isGirl() && s.getSchool().isGovt()).max((s1,s2)->s1.compareTo(s2));
-        // return sList.stream().filter(s-> s.isGirl() && s.getSchool().isGovt()).max(Student::compareTo);
+        // return sList.stream().filter(s -> s.isGirl() && s.getSchool().isGovt()).max((s1,s2)->s1.compareTo(s2));
+        return sList.stream().filter(s-> s.isGirl() && s.getSchool().isGovt()).max(Student::compareTo);
     }
 
     public static void main(String[] args) {

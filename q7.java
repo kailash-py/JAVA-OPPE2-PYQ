@@ -33,27 +33,27 @@ class InvalidInputEx extends Exception{
         super(msg);
     }
 }
+
 //define the class IntList with 
 //instance variable of int[]
 class IntList{
-    private int[] arr = new int[5];
-
-    //and methods set_value, getArray()
-    public void set_value(int index, int value) throws InvalidInputEx{
-        try {
-            arr[index]=value;
-            
-        } catch (ArrayIndexOutOfBoundsException e1) {
-            InvalidInputEx e2 = new InvalidInputEx("invalid index input");
-            e2.initCause(e1);
-            throw e2;
+    private int[] arr=new int[5];
+    
+    //set_valur, get_arr
+    public void set_value(int i, int m) throws InvalidInputEx{
+        try{
+            arr[i]=m;
+        }catch(ArrayIndexOutOfBoundsException e){
+            InvalidInputEx e1= new InvalidInputEx("invalid index input");
+            e1.initCause(e);
+            throw e1;
         }
-
     }
     public int[] getArray(){
         return arr;
     }
 }
+
 
 class q7{
     public static void main(String[] args) {

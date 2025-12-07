@@ -87,7 +87,7 @@ class Book implements Cloneable {
     }
     // define method clone
     public Book clone() throws CloneNotSupportedException{
-        Book clone_= (Book)super.clone();
+        Book clone_ = (Book)super.clone();
         clone_.author= author.clone();
         return clone_;
     }

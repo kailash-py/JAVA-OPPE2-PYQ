@@ -1,22 +1,22 @@
-/* Q 0.1
+/* 
  Cloning
  Problem Statement
  Write a Java program to create two objects t1 and t2 of type Team. t2 should be created
  from t1 using cloning such that any later changes to t2 do not affect t1.
- b " Class Project implements a Cloneable interface and has/should have the following
- members:b  Instance variables String proj
- name and double budgetb  Constructor to initialize the instance variablesb  Overridden method toString()b  Method clone(), to be implemented
- b " Class Manager implements a Cloneable interface and has/should have the following
- members:b  Instance variables String mngr
- name and Project projb  Constructor to initialize the instance variablesb  Overridden method toString()b  Method clone(), to be implemented
- b " Class Team implements a Cloneable interface and has/should have the following mem
-bers:b  Instance variables String teamName and Manager mngrb  Constructor to initialize the instance variablesb  Mutator methods as neededb  Overridden method toString()b  Method clone(), to be implemented
- b " Class CloneTest has the main method that takes the inputs and invokes appropriate
+  " Class Project implements a Cloneable interface and has/should have the following
+ members: Instance variables String proj
+ name and double budget Constructor to initialize the instance variables Overridden method toString() Method clone(), to be implemented
+  " Class Manager implements a Cloneable interface and has/should have the following
+ members: Instance variables String mngr
+ name and Project proj Constructor to initialize the instance variables Overridden method toString() Method clone(), to be implemented
+  " Class Team implements a Cloneable interface and has/should have the following mem
+bers: Instance variables String teamName and Manager mngr Constructor to initialize the instance variables Mutator methods as needed Overridden method toString() Method clone(), to be implemented
+  " Class CloneTest has the main method that takes the inputs and invokes appropriate
  methods to achieve the functionality.
  What you have to do
- b " Implement method clone() in class Project
- b " Implement method clone() in class Manager
- b " Implement method clone() in class Team */
+  " Implement method clone() in class Project
+  " Implement method clone() in class Manager
+  " Implement method clone() in class Team */
 
  import java.util.*;
  class Project implements Cloneable {
@@ -33,9 +33,9 @@ bers:b  Instance variables String teamName and Manager mngrb  Constructor to i
          return "Project: " + proj_name + ", budget: " + budget;
      }
  // 	Write code to implement clone() method
-     public Project clone()  throws CloneNotSupportedException{
-         return (Project)super.clone();
-     }
+    public Project clone() throws CloneNotSupportedException{
+        return (Project)super.clone();
+    }
  }
  class Manager implements Cloneable {
      private String mngr_name;
@@ -48,11 +48,11 @@ bers:b  Instance variables String teamName and Manager mngrb  Constructor to i
          return proj + "\n" + "Manager: " + mngr_name ;
      }
  // 	\\ Write code to implement clone() method
-     public Manager clone() throws CloneNotSupportedException{
-         Manager mngr_cloned= (Manager)super.clone();
-         mngr_cloned.proj= proj.clone();
-         return mngr_cloned;
-     }
+    public Manager clone() throws CloneNotSupportedException{
+        Manager clone_ = (Manager)super.clone();
+        clone_.proj=proj.clone();
+        return clone_;
+    }
  }
  class Team implements Cloneable {
      private String teamName;
@@ -72,11 +72,11 @@ bers:b  Instance variables String teamName and Manager mngrb  Constructor to i
          return teamName + "\n" + mngr ;
      }
  // 	\\ Write code to implement clone() method
-     public Team clone() throws CloneNotSupportedException{
-         Team team_cloned= (Team)super.clone();
-         team_cloned.mngr= mngr.clone();
-         return team_cloned;
-     }
+    public Team clone() throws CloneNotSupportedException{
+        Team clone_ = (Team)super.clone();
+        clone_.mngr=mngr.clone();
+        return clone_;
+    }
  }
  public class q1 {
      public static void main(String[] args) throws CloneNotSupportedException {

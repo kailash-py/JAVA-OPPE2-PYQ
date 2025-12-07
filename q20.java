@@ -1,5 +1,4 @@
-/*Q4.
-
+/*
 Complete the following program which models a car rental kiosk, and handles user requests as detailed below.
 
 The program should first accept the number of car rental requests, and then accept details of each request in the following format:
